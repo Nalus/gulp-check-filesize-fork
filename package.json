@@ -1,6 +1,6 @@
 {
   "name": "gulp-check-filesize",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Logs the size of a given file and warns if a defined limit is exceeded",
   "keywords": [
     "gulpplugin, filesize, warning"

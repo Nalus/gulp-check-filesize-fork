@@ -21,7 +21,7 @@ gulp.src("css/**/*.css")
 	.pipe(gulp.dest("./dist"));
 ```
 
-This produce a log that will look something like this:
+This produces a log that will look something like this:
 
 ```bash
 $ gulp css
@@ -32,16 +32,43 @@ $ gulp css
 
 ```
 
-### Setting filesize limit
+### enable gzip
 
-You can specify a maximum filesize (in Byte). If the filesize is exceeded, the plugin will log a warning:
+You can enable the gzip option to also check the filesize after gzip compression.
 
 ```javascript
 var checkFilesize = require("gulp-check-filesize");
 
 gulp.src("css/**/*.css")
-    .pipe(checkFilesize(16384) // 16384 === 16kb
-    .pipe(gulp.dest("./dist"));
+	.pipe(checkFilesize({
+		enableGzip: true
+	})
+	.pipe(gulp.dest("./dist"));
+```
+
+This produces a log that will look something like this:
+
+```bash
+$ gulp css
+[19:30:55] Using gulpfile /var/www/project/gulpfile.js
+[19:30:57] Starting 'css'...
+[19:30:57] Size of main.css: 114.32 kB (19.47 kB gzipped)
+[19:30:57] Finished 'css' after 502 ms
+
+```
+
+### Setting filesize limit
+
+You can specify a maximum filesize (in Byte). If the filesize is exceeded, the plugin will log a warning (see also fileSizeLimitGzipped):
+
+```javascript
+var checkFilesize = require("gulp-check-filesize");
+
+gulp.src("css/**/*.css")
+	.pipe(checkFilesize({
+		fileSizeLimit: 16384 // 16384 === 16kb
+	})
+	.pipe(gulp.dest("./dist"));
 ```
 
 ```bash
@@ -54,13 +81,27 @@ $ gulp css
 
 ## API
 
-### checkFilesize(filesizeLimit)
+### checkFilesize(options)
 
-#### filesizeLimit [optional]
+You can pass an optional options object to the plugin.
+
+#### options.enableGzip
+Type: `Boolean`  
+Default: false
+
+Output gzipped filesize as well
+
+#### options.filesizeLimit
 Type: `Number`  
 Default: undefined
 
 Your filesize limit in Bytes
+
+#### options.filesizeLimitGzipped
+Type: `Number`  
+Default: undefined
+
+Your filesize limit for gzipped files in Bytes
 
 ## License
 
