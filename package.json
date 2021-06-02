@@ -1,14 +1,11 @@
 {
-  "name": "gulp-check-filesize",
+  "name": "@frontend/gulp-check-filesize",
   "version": "2.0.1",
   "description": "Logs the size of a given file and warns if a defined limit is exceeded",
   "keywords": [
     "gulpplugin, filesize, warning"
   ],
-  "author": {
-    "name": "Philipp Nowinski",
-    "email": "philipp@sgalinski.de"
-  },
+  "author": "Philipp Nowinski <philipp@sgalinski.de>",
   "repository": {
     "type": "git",
     "url": "https://gitlab.fbs-d.com/k.devyatov/gulp-check-filesize.git"
@@ -43,5 +40,12 @@
   "license": "MIT",
   "publishConfig": {
     "access": "public"
+  },
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "directories": {
+    "test": "test"
   }
 }
