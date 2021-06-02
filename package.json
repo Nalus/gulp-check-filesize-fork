@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://gitlab.sgalinski.de/toolchain/gulp-check-filesize.git"
+    "url": "https://gitlab.fbs-d.com/k.devyatov/gulp-check-filesize.git"
   },
   "scripts": {
     "test": "istanbul test _mocha --report html -- test/*.js --reporter spec",
