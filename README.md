@@ -86,22 +86,28 @@ $ gulp css
 You can pass an optional options object to the plugin.
 
 #### options.enableGzip
-Type: `Boolean`  
+Type: `Boolean`
 Default: false
 
 Output gzipped filesize as well
 
 #### options.filesizeLimit
-Type: `Number`  
+Type: `Number`
 Default: undefined
 
 Your filesize limit in Bytes
 
 #### options.filesizeLimitGzipped
-Type: `Number`  
+Type: `Number`
 Default: undefined
 
 Your filesize limit for gzipped files in Bytes
+
+#### options.ignoreUnderLimit
+Type: `Boolean`
+Default: undefined
+
+Don't print sizes for files that are under the set filesizeLimit
 
 ## License
 
