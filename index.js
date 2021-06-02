@@ -17,7 +17,8 @@ module.exports = function(options){
 			formattedFilesize = getFileSize(filesize),
 			gzippedFilesize = 0,
 			formattedGzippedFilesize,
-			message = '';
+			message = '',
+            isMessageSet = false;
 
 		if (options.enableGzip) {
 			gzippedFilesize = zlib.gzipSync(file.contents).length;
@@ -28,12 +29,14 @@ module.exports = function(options){
 			message = gutil.colors.bold.red('WARNING:') + ' ' + gutil.colors.cyan(filenameShort) +
 				' exceeded filesize limit of ' + getFileSize(options.fileSizeLimit) + ': ' +
 				gutil.colors.red(formattedFilesize) + ' ';
+                isMessageSet = true;
 		}
 
 		if (typeof options.fileSizeLimitGzipped !== 'undefined' && gzippedFilesize > options.fileSizeLimitGzipped) {
 			message += gutil.colors.bold.red('WARNING:') + ' ' + gutil.colors.cyan(filenameShort) +
 				' exceeded gzipped filesize limit of ' + getFileSize(options.fileSizeLimitGzipped) + ': ' +
 				gutil.colors.red(formattedGzippedFilesize);
+            isMessageSet = true;
 		}
 
 		if (message === '') {
@@ -43,7 +46,9 @@ module.exports = function(options){
 			}
 		}
 
-		gutil.log(message);
+        if (!options.ignoreUnderLimit || options.ignoreUnderLimit && isMessageSet) {
+            gutil.log(message);
+        }
 
 		callback(null,file);
 	});
