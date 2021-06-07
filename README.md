@@ -1,6 +1,7 @@
 # gulp-check-filesize
 > check-filesize plugin for [gulp](https://github.com/wearefractal/gulp)
 
+This repo is a fork from original that couldn't be contributed to - https://gitlab.sgalinski.de/toolchain/gulp-check-filesize
 This plugin logs the size of a given file. If you set a filesize limit, it logs a warning if the limit is exceeded.
 
 ## Usage

@@ -8,12 +8,11 @@
   "author": "Philipp Nowinski <philipp@sgalinski.de>",
   "repository": {
     "type": "git",
-    "url": "https://gitlab.fbs-d.com/k.devyatov/gulp-check-filesize.git"
+    "url": "https://github.com/Nalus/gulp-check-filesize-fork"
   },
   "scripts": {
     "test": "istanbul test _mocha --report html -- test/*.js --reporter spec",
     "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
-    "semantic-release": "semantic-release"
   },
   "dependencies": {
     "filesize": "^3.1.2",
@@ -34,9 +33,6 @@
     "npm": ">=1.2.10"
   },
   "license": "MIT",
-  "publishConfig": {
-    "@fbs-frontend:registry": "https://gitlab.fbs-d.com/api/v4/packages/npm/"
-  },
   "files": [
     "index.js"
   ],
