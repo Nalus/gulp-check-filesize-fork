@@ -1,5 +1,5 @@
 {
-  "name": "@frontend/gulp-check-filesize",
+  "name": "@fbs-frontend/gulp-check-filesize",
   "version": "2.0.1",
   "description": "Logs the size of a given file and warns if a defined limit is exceeded",
   "keywords": [
@@ -22,15 +22,11 @@
     "through2": "*"
   },
   "devDependencies": {
-    "@semantic-release/git": "^9.0.0",
-    "@semantic-release/gitlab": "^6.1.0",
-    "@semantic-release/npm": "^7.1.3",
     "coveralls": "*",
     "event-stream": "*",
     "istanbul": "*",
     "mocha": "*",
     "mocha-lcov-reporter": "*",
-    "semantic-release": "^17.4.3",
     "should": "~2.1.0"
   },
   "engines": {
@@ -39,7 +35,7 @@
   },
   "license": "MIT",
   "publishConfig": {
-    "access": "public"
+    "@fbs-frontend:registry": "https://gitlab.fbs-d.com/api/v4/packages/npm/"
   },
   "files": [
     "index.js"
