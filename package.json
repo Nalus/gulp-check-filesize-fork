@@ -1,5 +1,5 @@
 {
-  "name": "@fbs-frontend/gulp-check-filesize",
+  "name": "gulp-check-filesize-fork",
   "version": "2.0.1",
   "description": "Logs the size of a given file and warns if a defined limit is exceeded",
   "keywords": [
